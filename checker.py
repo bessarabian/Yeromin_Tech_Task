@@ -47,15 +47,13 @@ def check_password(password: str):
         print('Invalid data was entered x_x')
 
     # final result
-    try:
-        if len(conclusion) == 0:
-            # if everithing is cool
-            return 'Your password is strong enough!'
-        else:
-            # if our programme have smth to say
-            return conclusion
-    except Exception:
-        print('Invalid data was entered x_x')
+    if len(conclusion) == 0:
+        # if everithing is cool
+        return 'Your password is strong enough!'
+    else:
+        # if our programme have smth to say
+        return conclusion
+    
 
 if __name__ == '__main__':
     print(check_password(sys.argv[1]))
