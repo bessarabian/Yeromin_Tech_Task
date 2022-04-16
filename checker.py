@@ -23,7 +23,7 @@ def check_password(password: str):
                 numbs = True
             if i in punctuation:
                 symbs = True
-    except Exception as ex:
+    except Exception:
         print('Invalid data was entered x_x')
 
     # Checking for cons
@@ -43,21 +43,19 @@ def check_password(password: str):
     try:
         if not len(password):
             print('Empty string was entered!')
-    except Exception as ex:
+    except Exception:
         print('Invalid data was entered x_x')
 
     # final result
     try:
         if len(conclusion) == 0:
             # if everithing is cool
-            return True
+            return 'Your password is strong enough!'
         else:
             # if our programme have smth to say
-            print(conclusion)
-            return False
-    except:
+            return conclusion
+    except Exception:
         print('Invalid data was entered x_x')
 
 if __name__ == '__main__':
-    if check_password(sys.argv[1]) == True:
-        print('Your password is strong enough!')
+    print(check_password(sys.argv[1]))
